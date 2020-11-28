@@ -1,17 +1,12 @@
 import React from 'react';
+
 import Provider from './components/Provider';
+import Layout from './components/Layout';
 
 const App = () => {
   return (
     <Provider>
-      <div className="App">
-        <header className="App-header">
-          <p>Hello world!</p>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-        </header>
-      </div>
+      <Layout />
     </Provider>
   );
 };
