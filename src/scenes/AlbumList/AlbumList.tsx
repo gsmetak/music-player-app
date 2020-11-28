@@ -1,21 +1,14 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
+import SContainer from 'scenes/styled';
 import Card from '../../components/Card';
 
 import data from '../../resources/albums.json';
 
-const SContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  width: 60vw;
-`;
-
 const { albums } = data;
 
 const AlbumList = () => (
-  <SContainer>
+  <SContainer data-test="album-list">
     {albums.map((album) => (
       <Card
         key={album.id}
