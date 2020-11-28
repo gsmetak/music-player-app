@@ -9,10 +9,7 @@ const SContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-
-  @media (min-width: 768px) {
-    width: 60em;
-  }
+  width: 60vw;
 `;
 
 const { albums } = data;
