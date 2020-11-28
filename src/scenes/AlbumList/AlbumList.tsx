@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import SContainer from 'scenes/styled';
 import Card from '../../components/Card';
@@ -11,7 +12,7 @@ const AlbumList = () => (
   <SContainer data-test="album-list">
     {albums.map((album) => (
       <Card
-        key={album.id}
+        key={uuidv4()}
         id={album.id}
         imageUrl={album.cover}
         title={album.title}
