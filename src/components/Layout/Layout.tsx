@@ -4,6 +4,7 @@ import { Route, Redirect, Switch } from 'react-router';
 
 import Albums from 'scenes/Albums';
 import NotFound from 'components/NotFound';
+import Tracks from 'scenes/Tracks';
 import Header from '../Header';
 
 const SLayout = styled.div`
@@ -30,6 +31,7 @@ const Layout = () => (
         <Switch>
           <Route exact component={NotFound} path="/not-found" />
           <Route exact component={Albums} path="/albums" />
+          <Route component={Tracks} path="/albums/:id" />
           <Redirect exact from="/" to="/albums" />
           <Redirect to="/not-found" />
         </Switch>
