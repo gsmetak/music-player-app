@@ -9,14 +9,14 @@ interface Props {
 
 const SCard = styled.div`
   background: #fff;
-  width: 43vh;
   border-radius: 0.6em;
-  margin: 1em;
-  overflow: hidden;
-  cursor: pointer;
   box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25),
     0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
+  cursor: pointer;
+  margin: 1em auto;
+  overflow: hidden;
   transition: all ease 200ms;
+  width: 43vh;
 
   &:hover {
     transform: scale(1.03);
