@@ -1,0 +1,66 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "globals": {
+    "API_URL": false
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true,
+    "jest": true
+  },
+  "extends": ["airbnb-typescript", "prettier", "prettier/react"],
+  "plugins": ["prettier", "typescript", "react-hooks"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
+      }
+    }
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "ignoreCase": true,
+        "noSortAlphabetically": false,
+        "reservedFirst": true,
+        "shorthandFirst": true
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all"
+      }
+    ],
+    "react/require-default-props": 0,
+    "no-shadow": 0,
+    "no-underscore-dangle": 0,
+    "no-console": 0,
+    "prefer-promise-reject-errors": 0,
+    "no-restricted-syntax": 0,
+    "import/no-named-as-default": 0,
+    "@typescript-eslint/indent": "off",
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn"  // Checks effect dependencies
+  }
+}
