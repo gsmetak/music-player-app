@@ -1,8 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import { H3 } from 'components/styled';
 
 interface Props {
+  id: string;
   imageUrl: string;
   title: string;
 }
@@ -45,11 +48,25 @@ const SH3 = styled(H3)`
   text-align: center;
 `;
 
-const Card = ({ imageUrl, title }: Props) => {
+const SLink = styled(Link)`
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+`;
+
+const Card = ({ id, imageUrl, title }: Props) => {
   return (
     <SCard>
-      <SImage data-test="card-image" src={imageUrl} />
-      <SH3>{title}</SH3>
+      <SLink to={`albums/${id}`}>
+        <SImage data-test="card-image" src={imageUrl} />
+        <SH3>{title}</SH3>
+      </SLink>
     </SCard>
   );
 };

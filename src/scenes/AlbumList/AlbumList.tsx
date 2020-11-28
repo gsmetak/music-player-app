@@ -17,7 +17,12 @@ const { albums } = data;
 const AlbumList = () => (
   <SContainer>
     {albums.map((album) => (
-      <Card key={album.id} imageUrl={album.cover} title={album.title} />
+      <Card
+        key={album.id}
+        id={album.id}
+        imageUrl={album.cover}
+        title={album.title}
+      />
     ))}
   </SContainer>
 );
