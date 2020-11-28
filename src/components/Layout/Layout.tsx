@@ -2,9 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Route, Redirect, Switch } from 'react-router';
 
-import Albums from 'scenes/Albums';
+import AlbumList from 'scenes/AlbumList';
 import NotFound from 'components/NotFound';
-import Tracks from 'scenes/Tracks';
+import TrackList from 'scenes/TrackList';
 import Header from '../Header';
 
 const SLayout = styled.div`
@@ -30,8 +30,8 @@ const Layout = () => (
       <SMain>
         <Switch>
           <Route exact component={NotFound} path="/not-found" />
-          <Route exact component={Albums} path="/albums" />
-          <Route component={Tracks} path="/albums/:id" />
+          <Route exact component={AlbumList} path="/albums" />
+          <Route component={TrackList} path="/albums/:id" />
           <Redirect exact from="/" to="/albums" />
           <Redirect to="/not-found" />
         </Switch>
