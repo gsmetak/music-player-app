@@ -4,6 +4,7 @@ import Header from '../Header';
 
 interface Props {
   children: React.ReactNode | React.ReactElement;
+  hasHeader?: boolean;
 }
 
 const SContainer = styled.div`
@@ -15,9 +16,9 @@ const SContainer = styled.div`
   text-align: center;
 `;
 
-const ErrorLayout = ({ children }: Props) => (
+const ErrorLayout = ({ hasHeader = true, children }: Props) => (
   <>
-    <Header />
+    {hasHeader && <Header />}
     <SContainer>{children}</SContainer>
   </>
 );

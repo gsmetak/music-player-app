@@ -30,3 +30,7 @@ export const SButton = styled.button`
     box-shadow: 0 0 0 3px #dcdcff;
   }
 `;
+
+export const SErrorInfoContainer = styled.div`
+  margin-bottom: 40px;
+`;
