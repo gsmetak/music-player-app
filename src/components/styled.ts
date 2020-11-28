@@ -8,6 +8,14 @@ export const H2 = styled.h2`
   padding: 0;
 `;
 
+export const H3 = styled.h3`
+  color: white;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 0;
+  padding: 0;
+`;
+
 export const SButton = styled.button`
   align-items: center;
   background-color: #8888d0;
