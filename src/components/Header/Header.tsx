@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import H2 from 'components/styled';
+import { H2 } from 'components/styled';
 
 const SHeader = styled.header`
   align-items: center;

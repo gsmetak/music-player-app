@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+import { ErrorBoundary } from 'react-error-boundary';
+
+import GenericError from 'components/GenericError';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -23,7 +26,9 @@ interface ProviderProps {
 const Provider = ({ children }: ProviderProps) => (
   <>
     <GlobalStyle />
-    <BrowserRouter>{children}</BrowserRouter>
+    <BrowserRouter>
+      <ErrorBoundary FallbackComponent={GenericError}>{children}</ErrorBoundary>
+    </BrowserRouter>
   </>
 );
 
