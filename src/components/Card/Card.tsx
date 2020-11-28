@@ -9,7 +9,7 @@ interface Props {
 
 const SCard = styled.div`
   background: #fff;
-  width: 16em;
+  width: 43vh;
   border-radius: 0.6em;
   margin: 1em;
   overflow: hidden;
