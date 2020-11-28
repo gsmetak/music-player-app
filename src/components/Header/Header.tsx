@@ -6,20 +6,15 @@ import H2 from 'components/styled';
 const SHeader = styled.header`
   align-items: center;
   background-color: #8888d0;
+  box-sizing: border-box;
   display: flex;
-  position: fixed;
+  height: 60px;
+  justify-content: space-between;
+  padding: 0 16px;
+  position: sticky;
+  top: 0;
   width: 100%;
-`;
-
-export const H2 = styled.h2`
-  margin: 0;
-  padding: 0;
-  font-style: inherit;
-  font-family: 'Montserrat';
-  letter-spacing: 0;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 32px;
+  z-index: 1;
 `;
 
 const Header = () => (
