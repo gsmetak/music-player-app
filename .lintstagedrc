@@ -1,0 +1,4 @@
+{
+  "*.{md?x,html,json}": ["yarn prettier --write", "git add"],
+  "*.{js,jsx,ts,tsx}": ["yarn eslint --fix", "git add"]
+}
