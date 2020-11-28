@@ -1,7 +1,8 @@
 import * as React from 'react';
-
 import styled from 'styled-components';
+import { Route, Redirect, Switch } from 'react-router';
 
+import Albums from 'scenes/Albums';
 import Header from '../Header';
 
 const SLayout = styled.div`
@@ -24,7 +25,12 @@ const Layout = () => (
   <>
     <Header />
     <SLayout>
-      <SMain />
+      <SMain>
+        <Switch>
+          <Route exact component={Albums} path="/albums" />
+          <Redirect exact from="/" to="/albums" />
+        </Switch>
+      </SMain>
     </SLayout>
   </>
 );
