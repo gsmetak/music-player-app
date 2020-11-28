@@ -5,15 +5,28 @@ import styled from 'styled-components';
 import Header from '../Header';
 
 const SLayout = styled.div`
-  & > * {
-    font-family: 'Montserrat', sans-serif;
-  }
+  display: flex;
+  height: 100%;
+`;
+
+const SMain = styled.main`
+  align-items: flex-start;
+  flex: 1;
+  height: calc(100vh - 60px);
+  min-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
 `;
 
 const Layout = () => (
-  <SLayout>
+  <>
     <Header />
-  </SLayout>
+    <SLayout>
+      <SMain />
+    </SLayout>
+  </>
 );
 
 export default Layout;
