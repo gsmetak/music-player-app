@@ -2,121 +2,121 @@
   "albums": [
     {
       "id": "album_1",
-      "cover": "https://picsum.photos/id/1/400",
+      "cover": "https://picsum.photos/id/98/233",
       "title": "Album 1",
       "tracks": [{
         "id": 1,
         "album_id": "album_1",
         "artist": "Artist 1",
-        "cover": "https://picsum.photos/id/1/400",
+        "cover": "https://picsum.photos/id/98/233",
         "title": "Track 1",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 2,
         "album_id": "album_1",
         "artist": "Artist 1",
-        "cover": "https://picsum.photos/id/1/400",
+        "cover": "https://picsum.photos/id/98/233",
         "title": "Track 2",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 3,
         "album_id": "album_1",
         "artist": "Artist 1",
-        "cover": "https://picsum.photos/id/1/400",
+        "cover": "https://picsum.photos/id/98/233",
         "title": "Track 3",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 4,
         "album_id": "album_1",
         "artist": "Artist 1",
-        "cover": "https://picsum.photos/id/1/400",
+        "cover": "https://picsum.photos/id/98/233",
         "title": "Track 4",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 5,
         "album_id": "album_1",
         "artist": "Artist 1",
-        "cover": "https://picsum.photos/id/1/400",
+        "cover": "https://picsum.photos/id/98/233",
         "title": "Track 5",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       }]
     },{
       "id": "album_2",
-      "cover": "https://picsum.photos/id/2/400",
+      "cover": "https://picsum.photos/id/95/233",
       "title": "Album 2",
       "tracks": [{
         "id": 1,
         "album_id": "album_2",
         "artist": "Artist 2",
-        "cover": "https://picsum.photos/id/2/400",
+        "cover": "https://picsum.photos/id/95/233",
         "title": "Track 1",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 2,
         "album_id": "album_2",
         "artist": "Artist 2",
-        "cover": "https://picsum.photos/id/2/400",
+        "cover": "https://picsum.photos/id/95/233",
         "title": "Track 2",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 3,
         "album_id": "album_2",
         "artist": "Artist 2",
-        "cover": "https://picsum.photos/id/2/400",
+        "cover": "https://picsum.photos/id/95/233",
         "title": "Track 3",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 4,
         "album_id": "album_2",
         "artist": "Artist 2",
-        "cover": "https://picsum.photos/id/2/400",
+        "cover": "https://picsum.photos/id/95/233",
         "title": "Track 4",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 5,
         "album_id": "album_2",
         "artist": "Artist 2",
-        "cover": "https://picsum.photos/id/2/400",
+        "cover": "https://picsum.photos/id/95/233",
         "title": "Track 5",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       }]
     },{
       "id": "album_3",
-      "cover": "https://picsum.photos/id/3/400",
+      "cover": "https://picsum.photos/id/92/233",
       "title": "Album 3",
       "tracks": [{
         "id": 1,
         "album_id": "album_3",
         "artist": "Artist 3",
-        "cover": "https://picsum.photos/id/3/400",
+        "cover": "https://picsum.photos/id/92/233",
         "title": "Track 1",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 2,
         "album_id": "album_3",
         "artist": "Artist 3",
-        "cover": "https://picsum.photos/id/3/400",
+        "cover": "https://picsum.photos/id/92/233",
         "title": "Track 2",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 3,
         "album_id": "album_3",
         "artist": "Artist 3",
-        "cover": "https://picsum.photos/id/3/400",
+        "cover": "https://picsum.photos/id/92/233",
         "title": "Track 3",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 4,
         "album_id": "album_3",
         "artist": "Artist 3",
-        "cover": "https://picsum.photos/id/3/400",
+        "cover": "https://picsum.photos/id/92/233",
         "title": "Track 4",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       },{
         "id": 5,
         "album_id": "album_3",
         "artist": "Artist 3",
-        "cover": "https://picsum.photos/id/3/400",
+        "cover": "https://picsum.photos/id/92/233",
         "title": "Track 5",
         "url": "https://drive.google.com/file/d/1O5t235kcv5MoJYCNcx8osWRBS45CNnNB/view?usp=sharing"
       }]
