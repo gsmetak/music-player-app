@@ -6,10 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
 import { SContainer, STransparentButton } from 'scenes/styled';
+import { useContext } from 'react';
 import ListItem from '../../components/ListItem/ListItem';
 import { SH2, SInfoContainer, SList } from './styled';
 
 import data from '../../resources/albums.json';
+import SongContext from '../../components/SongContext';
 
 interface ParamTypes {
   id: string;
@@ -25,8 +27,18 @@ const { albums } = data;
 
 const TrackList = () => {
   const history = useHistory();
+
+  // @ts-ignore
+  const { selectTrack } = useContext(SongContext);
+
   const { id } = useParams<ParamTypes>();
   const selectedAlbum = albums.find((album) => album.id === id);
+
+  const handleSelectTrack = (trackId: number) => {
+    if (selectedAlbum) {
+      selectTrack(selectedAlbum.id, trackId);
+    }
+  };
 
   return (
     <SContainer data-test="track-list">
@@ -44,7 +56,9 @@ const TrackList = () => {
           <ListItem
             key={uuidv4()}
             artist={track.artist}
+            id={track.id}
             imageUrl={track.cover}
+            selectTrack={handleSelectTrack}
             title={track.title}
           />
         ))}
