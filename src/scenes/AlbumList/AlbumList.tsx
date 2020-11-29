@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import SContainer from 'scenes/styled';
+import { SContainer } from 'scenes/styled';
 import Card from '../../components/Card';
 
 import data from '../../resources/albums.json';

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { H2, SButton } from '../../components/styled';
+import { H2 } from '../../components/styled';
 
 export const SList = styled.ul`
   list-style: none;
@@ -18,12 +18,6 @@ export const SInfoContainer = styled.div`
   & > * {
     color: #666;
   }
-`;
-
-export const STransparentButton = styled(SButton)`
-  background-color: transparent;
-  font-size: 18px;
-  position: absolute;
 `;
 
 export const SH2 = styled(H2)`

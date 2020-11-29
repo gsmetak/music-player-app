@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { SButton } from '../components/styled';
 
-const SContainer = styled.div`
+export const SContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 2em auto;
@@ -11,4 +12,6 @@ const SContainer = styled.div`
   }
 `;
 
-export default SContainer;
+export const STransparentButton = styled(SButton)`
+  background-color: transparent;
+`;
