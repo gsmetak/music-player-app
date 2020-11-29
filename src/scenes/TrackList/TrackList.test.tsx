@@ -3,11 +3,14 @@ import { render, screen } from '@testing-library/react';
 
 import { BrowserRouter } from 'react-router-dom';
 import TrackList from '.';
+import SongsProvider from '../../components/SongContext/SongsProvider';
 
 const renderTrackList = () =>
   render(
     <BrowserRouter>
-      <TrackList />
+      <SongsProvider>
+        <TrackList />
+      </SongsProvider>
     </BrowserRouter>,
   );
 
