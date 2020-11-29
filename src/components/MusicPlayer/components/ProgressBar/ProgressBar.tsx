@@ -20,7 +20,7 @@ const ProgressBar = ({ currentTime, duration, seekTo }: Props) => {
   };
 
   const getWidth = () => {
-    if (bar?.current) {
+    if (bar?.current && duration !== 0) {
       return ((currentTime / duration) * bar.current.clientWidth).toFixed(2);
     }
     return '0';
