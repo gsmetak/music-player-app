@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -7,10 +8,10 @@ import {
   faPause,
   faStepForward,
 } from '@fortawesome/free-solid-svg-icons';
-
-import { useState } from 'react';
 import ReactPlayer from 'react-player';
+
 import { STransparentButton } from '../../scenes/styled';
+import ProgressBar from './components/ProgressBar';
 
 const SContainer = styled.div`
   display: block;
@@ -46,7 +47,7 @@ const MusicPlayer = () => {
   return (
     <SContainer data-test="music-player">
       <span>Song Title!</span>
-      <div>Progress Bar!</div>
+      <ProgressBar />
 
       <SControls>
         <STransparentButton onClick={() => {}}>
