@@ -1,6 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+interface Props {
+  children: React.ReactNode;
+}
+
 const SFooter = styled.footer`
   align-items: center;
   background-color: #aaaad0;
@@ -15,6 +19,8 @@ const SFooter = styled.footer`
   z-index: 1;
 `;
 
-const Footer = () => <SFooter data-test="app-footer" />;
+const Footer = ({ children }: Props) => (
+  <SFooter data-test="app-footer">{children}</SFooter>
+);
 
 export default Footer;
