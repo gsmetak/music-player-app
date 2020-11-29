@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { H2 } from 'components/styled';
 
@@ -17,9 +18,15 @@ const SHeader = styled.header`
   z-index: 1;
 `;
 
+const SLink = styled(Link)`
+  text-decoration: none;
+`;
+
 const Header = () => (
   <SHeader>
-    <H2>Music Player App</H2>
+    <SLink to="/">
+      <H2>Music Player App</H2>
+    </SLink>
   </SHeader>
 );
 
