@@ -22,7 +22,7 @@ const SContainer = styled.div`
 const SControls = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: auto;
+  margin: 0.4em auto;
   width: 25%;
 
   & > * {
