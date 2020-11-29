@@ -7,6 +7,7 @@ import NotFound from 'components/NotFound';
 import TrackList from 'scenes/TrackList';
 import Header from '../Header';
 import Footer from '../Footer';
+import MusicPlayer from '../MusicPlayer';
 
 const SLayout = styled.div`
   display: flex;
@@ -38,7 +39,9 @@ const Layout = () => (
         </Switch>
       </SMain>
     </SLayout>
-    <Footer />
+    <Footer>
+      <MusicPlayer />
+    </Footer>
   </>
 );
 
