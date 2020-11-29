@@ -6,7 +6,7 @@ import { H2 } from 'components/styled';
 
 const SHeader = styled.header`
   align-items: center;
-  background-color: #aaaad0;
+  background-color: #8888d0;
   box-sizing: border-box;
   display: flex;
   height: 60px;

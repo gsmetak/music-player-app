@@ -7,7 +7,7 @@ interface Props {
 
 const SFooter = styled.footer`
   align-items: center;
-  background-color: #aaaad0;
+  background-color: #8888d0;
   box-sizing: border-box;
   display: flex;
   height: 100px;
