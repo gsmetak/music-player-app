@@ -16,6 +16,7 @@ interface ParamTypes {
 }
 
 const SBackButton = styled(STransparentButton)`
+  font-family: 'Montserrat';
   font-size: 18px;
   position: absolute;
 `;
