@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import styled from 'styled-components';
 import ReactPlayer from 'react-player';
 
 import ProgressBar from './components/ProgressBar';
 import Controls from './components/Controls';
+import SongContext from '../SongContext';
+import { H3 } from '../styled';
 
 const SContainer = styled.div`
   display: block;
@@ -29,15 +31,17 @@ const MusicPlayer = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
 
+  // @ts-ignore
+  const { selectedTrack, selectNext, selectPrevious } = useContext(SongContext);
+
   const url = {
-    src:
-      'https://docs.google.com/uc?export=download&id=1O5t235kcv5MoJYCNcx8osWRBS45CNnNB',
+    src: selectedTrack?.url,
     type: 'audio/mp3',
   };
 
   const seekTo = (time: number) => {
     if (player?.current) {
-      player.current!.seekTo(time, 'fraction');
+      player.current.seekTo(time, 'fraction');
 
       setCurrentTime(player.current!.getCurrentTime());
     }
@@ -49,27 +53,34 @@ const MusicPlayer = () => {
 
   return (
     <SContainer data-test="music-player">
-      <span>Song Title!</span>
+      <H3>{selectedTrack && selectedTrack.title}</H3>
       <ProgressBar
         currentTime={currentTime}
         duration={duration}
         seekTo={seekTo}
       />
 
-      <Controls isPlaying={isPlaying} togglePlay={handlePlayPause} />
-
-      <SReactPlayer
-        ref={player}
-        playing={isPlaying}
-        progressInterval={100}
-        url={[url]}
-        onDuration={(e: any) => {
-          setDuration(Math.round(e));
-        }}
-        onProgress={(e: any) => {
-          setCurrentTime(Math.round(e.playedSeconds * 100) / 100);
-        }}
+      <Controls
+        isPlaying={isPlaying}
+        selectNext={selectNext}
+        selectPrevious={selectPrevious}
+        togglePlay={handlePlayPause}
       />
+
+      {selectedTrack && (
+        <SReactPlayer
+          ref={player}
+          playing={isPlaying}
+          progressInterval={100}
+          url={[url]}
+          onDuration={(e: any) => {
+            setDuration(Math.round(e));
+          }}
+          onProgress={(e: any) => {
+            setCurrentTime(Math.round(e.playedSeconds * 100) / 100);
+          }}
+        />
+      )}
     </SContainer>
   );
 };

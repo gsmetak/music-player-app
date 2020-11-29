@@ -13,6 +13,8 @@ import { STransparentButton } from '../../../../scenes/styled';
 interface Props {
   togglePlay: () => void;
   isPlaying: boolean;
+  selectPrevious: () => void;
+  selectNext: () => void;
 }
 
 const SControls = styled.div`
@@ -26,9 +28,14 @@ const SControls = styled.div`
   }
 `;
 
-const Controls = ({ togglePlay, isPlaying }: Props) => (
+const Controls = ({
+  togglePlay,
+  isPlaying,
+  selectNext,
+  selectPrevious,
+}: Props) => (
   <SControls data-test="controls">
-    <STransparentButton onClick={() => {}}>
+    <STransparentButton onClick={() => selectPrevious()}>
       <FontAwesomeIcon icon={faStepBackward} />
     </STransparentButton>
 
@@ -36,7 +43,7 @@ const Controls = ({ togglePlay, isPlaying }: Props) => (
       <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
     </STransparentButton>
 
-    <STransparentButton onClick={() => {}}>
+    <STransparentButton onClick={() => selectNext()}>
       <FontAwesomeIcon icon={faStepForward} />
     </STransparentButton>
   </SControls>
