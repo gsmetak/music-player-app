@@ -8,6 +8,8 @@ import {
   faStepForward,
 } from '@fortawesome/free-solid-svg-icons';
 
+import { useState } from 'react';
+import ReactPlayer from 'react-player';
 import { STransparentButton } from '../../scenes/styled';
 
 const SContainer = styled.div`
@@ -28,28 +30,45 @@ const SControls = styled.div`
   }
 `;
 
-const MusicPlayer = () => (
-  <SContainer data-test="music-player">
-    <span>Song Title!</span>
-    <div>Progress Bar!</div>
-    <SControls>
-      <STransparentButton onClick={() => {}}>
-        <FontAwesomeIcon icon={faStepBackward} />
-      </STransparentButton>
+const SReactPlayer = styled(ReactPlayer)`
+  position: absolute;
+`;
 
-      <STransparentButton onClick={() => {}}>
-        <FontAwesomeIcon icon={faPlay} />
-      </STransparentButton>
+const MusicPlayer = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
 
-      <STransparentButton onClick={() => {}}>
-        <FontAwesomeIcon icon={faPause} />
-      </STransparentButton>
+  const url = {
+    src:
+      'https://docs.google.com/uc?export=download&id=1O5t235kcv5MoJYCNcx8osWRBS45CNnNB',
+    type: 'audio/mp3',
+  };
 
-      <STransparentButton onClick={() => {}}>
-        <FontAwesomeIcon icon={faStepForward} />
-      </STransparentButton>
-    </SControls>
-  </SContainer>
-);
+  return (
+    <SContainer data-test="music-player">
+      <span>Song Title!</span>
+      <div>Progress Bar!</div>
+
+      <SControls>
+        <STransparentButton onClick={() => {}}>
+          <FontAwesomeIcon icon={faStepBackward} />
+        </STransparentButton>
+
+        <STransparentButton
+          onClick={() => {
+            setIsPlaying((prevState) => !prevState);
+          }}
+        >
+          <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
+        </STransparentButton>
+
+        <STransparentButton onClick={() => {}}>
+          <FontAwesomeIcon icon={faStepForward} />
+        </STransparentButton>
+      </SControls>
+
+      <SReactPlayer playing={isPlaying} url={[url]} />
+    </SContainer>
+  );
+};
 
 export default MusicPlayer;
