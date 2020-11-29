@@ -1,17 +1,10 @@
 import * as React from 'react';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStepBackward,
-  faPlay,
-  faPause,
-  faStepForward,
-} from '@fortawesome/free-solid-svg-icons';
 import ReactPlayer from 'react-player';
 
-import { STransparentButton } from '../../scenes/styled';
 import ProgressBar from './components/ProgressBar';
+import Controls from './components/Controls';
 
 const SContainer = styled.div`
   display: block;
@@ -24,24 +17,15 @@ const SContainer = styled.div`
   }
 `;
 
-const SControls = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 0.4em auto;
-  width: 25%;
-
-  & > * {
-    font-size: 2.5rem;
-  }
-`;
-
 const SReactPlayer = styled(ReactPlayer)`
   position: absolute;
 `;
 
 const MusicPlayer = () => {
   const player = useRef() as React.MutableRefObject<ReactPlayer>;
+
   const [isPlaying, setIsPlaying] = useState(false);
+
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(1);
 
@@ -59,6 +43,10 @@ const MusicPlayer = () => {
     }
   };
 
+  const handlePlayPause = () => {
+    setIsPlaying((prevState) => !prevState);
+  };
+
   return (
     <SContainer data-test="music-player">
       <span>Song Title!</span>
@@ -68,23 +56,7 @@ const MusicPlayer = () => {
         seekTo={seekTo}
       />
 
-      <SControls>
-        <STransparentButton onClick={() => {}}>
-          <FontAwesomeIcon icon={faStepBackward} />
-        </STransparentButton>
-
-        <STransparentButton
-          onClick={() => {
-            setIsPlaying((prevState) => !prevState);
-          }}
-        >
-          <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
-        </STransparentButton>
-
-        <STransparentButton onClick={() => {}}>
-          <FontAwesomeIcon icon={faStepForward} />
-        </STransparentButton>
-      </SControls>
+      <Controls isPlaying={isPlaying} togglePlay={handlePlayPause} />
 
       <SReactPlayer
         ref={player}
