@@ -8,11 +8,14 @@ export const SBar = styled.div`
   width: 90%;
 `;
 
-export const SBarElapsed = styled.div<{ width: string }>`
+export const SBarElapsed = styled.div.attrs((props: { width: string }) => ({
+  style: {
+    width: `${props.width}px`,
+  },
+}))<{ width: string }>`
   background-color: #ffcc80;
   border-radius: 50px;
   height: 100%;
-  width: ${(props) => props.width}px;
 `;
 
 export const SContainer = styled.div`
