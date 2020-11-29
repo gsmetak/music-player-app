@@ -1,14 +1,14 @@
 import * as React from 'react';
-import * as rtl from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import Header from './Header';
 
+const renderHeader = () => render(<Header />);
+
 describe('<Header />', () => {
-  afterEach(rtl.cleanup);
-
   it('will render the component', () => {
-    const { getByText } = rtl.render(<Header />);
+    renderHeader();
 
-    expect(getByText('Music Player App')).toBeTruthy();
+    expect(screen.getByText('Music Player App')).toBeTruthy();
   });
 });
