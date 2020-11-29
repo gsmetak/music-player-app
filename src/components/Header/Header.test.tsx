@@ -3,7 +3,7 @@ import * as rtl from '@testing-library/react';
 
 import Header from './Header';
 
-describe('Header', () => {
+describe('<Header />', () => {
   afterEach(rtl.cleanup);
 
   it('will render the component', () => {
