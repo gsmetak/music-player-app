@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const SFooter = styled.footer`
   align-items: center;
-  background-color: #8888d0;
+  background-color: #aaaad0;
   box-sizing: border-box;
   display: flex;
-  height: 60px;
+  height: 100px;
   justify-content: space-between;
   padding: 0 16px;
   position: sticky;
