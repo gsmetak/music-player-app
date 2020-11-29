@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -18,6 +18,10 @@ const SContainer = styled.div`
   margin: auto;
   text-align: center;
   width: 40vw;
+
+  & > * {
+    color: white;
+  }
 `;
 
 const SControls = styled.div`
@@ -36,7 +40,10 @@ const SReactPlayer = styled(ReactPlayer)`
 `;
 
 const MusicPlayer = () => {
+  const player = useRef() as React.MutableRefObject<ReactPlayer>;
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(1);
 
   const url = {
     src:
@@ -44,10 +51,22 @@ const MusicPlayer = () => {
     type: 'audio/mp3',
   };
 
+  const seekTo = (time: number) => {
+    if (player?.current) {
+      player.current!.seekTo(time, 'fraction');
+
+      setCurrentTime(player.current!.getCurrentTime());
+    }
+  };
+
   return (
     <SContainer data-test="music-player">
       <span>Song Title!</span>
-      <ProgressBar />
+      <ProgressBar
+        currentTime={currentTime}
+        duration={duration}
+        seekTo={seekTo}
+      />
 
       <SControls>
         <STransparentButton onClick={() => {}}>
@@ -67,7 +86,18 @@ const MusicPlayer = () => {
         </STransparentButton>
       </SControls>
 
-      <SReactPlayer playing={isPlaying} url={[url]} />
+      <SReactPlayer
+        ref={player}
+        playing={isPlaying}
+        progressInterval={100}
+        url={[url]}
+        onDuration={(e: any) => {
+          setDuration(Math.round(e));
+        }}
+        onProgress={(e: any) => {
+          setCurrentTime(Math.round(e.playedSeconds * 100) / 100);
+        }}
+      />
     </SContainer>
   );
 };
