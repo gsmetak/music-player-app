@@ -17,7 +17,8 @@ const SLayout = styled.div`
 const SMain = styled.main`
   align-items: flex-start;
   flex: 1;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 60px - 100px);
+  margin: auto 0;
   min-height: 200px;
   overflow-x: hidden;
   overflow-y: auto;
