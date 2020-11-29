@@ -6,6 +6,7 @@ import AlbumList from 'scenes/AlbumList';
 import NotFound from 'components/NotFound';
 import TrackList from 'scenes/TrackList';
 import Header from '../Header';
+import Footer from '../Footer';
 
 const SLayout = styled.div`
   display: flex;
@@ -37,6 +38,7 @@ const Layout = () => (
         </Switch>
       </SMain>
     </SLayout>
+    <Footer />
   </>
 );
 
