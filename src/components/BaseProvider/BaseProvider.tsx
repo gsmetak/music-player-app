@@ -23,7 +23,7 @@ interface ProviderProps {
   children: React.ReactNode;
 }
 
-const Provider = ({ children }: ProviderProps) => (
+const BaseProvider = ({ children }: ProviderProps) => (
   <>
     <GlobalStyle />
     <BrowserRouter>
@@ -32,4 +32,4 @@ const Provider = ({ children }: ProviderProps) => (
   </>
 );
 
-export default Provider;
+export default BaseProvider;

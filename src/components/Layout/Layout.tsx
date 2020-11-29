@@ -8,6 +8,7 @@ import TrackList from 'scenes/TrackList';
 import Header from '../Header';
 import Footer from '../Footer';
 import MusicPlayer from '../MusicPlayer';
+import SongsProvider from '../SongContext/SongsProvider';
 
 const SLayout = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ const SMain = styled.main`
 `;
 
 const Layout = () => (
-  <>
+  <SongsProvider>
     <Header />
     <SLayout>
       <SMain>
@@ -43,7 +44,7 @@ const Layout = () => (
     <Footer>
       <MusicPlayer />
     </Footer>
-  </>
+  </SongsProvider>
 );
 
 export default Layout;

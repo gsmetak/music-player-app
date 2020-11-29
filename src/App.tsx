@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Provider from './components/Provider';
+import Provider from './components/BaseProvider';
 import Layout from './components/Layout';
 
 const App = () => {
