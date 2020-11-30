@@ -18,10 +18,18 @@ const SongsProvider = ({ children }: Props) => {
     setIsSongLoading(true);
     setHasError(false);
 
-    setSelectedTrack(
-      () =>
-        data.albums.find((album) => album.id === albumId)?.tracks[trackId - 1],
-    );
+    setSelectedTrack((prevState) => {
+      // Lowest track id value is always 1, that's why [trackId - 1] is valid
+      const track = data.albums.find((album) => album.id === albumId)?.tracks[
+        trackId - 1
+      ];
+
+      if (prevState?.url === track?.url) {
+        setIsSongLoading(false);
+      }
+
+      return track;
+    });
   };
 
   const selectPrevious = () => {
