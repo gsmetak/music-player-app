@@ -81,7 +81,7 @@ const MusicPlayer = () => {
       <STitleContainer>
         {selectedTrack &&
           (hasError ? (
-            <H3>There was an error playing the selected track.</H3>
+            <H3>Error playing media</H3>
           ) : (
             <H3>{selectedTrack.title}</H3>
           ))}
