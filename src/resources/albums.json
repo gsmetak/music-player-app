@@ -140,6 +140,12 @@
           "url": "https://docs.google.com/uc?export=download&id=1Y0WdOUR8MOsjN-HigTQcMDulLQg45vyW"
         }
       ]
+    },
+    {
+      "id": "album_4",
+      "cover": "https://picsum.photos/id/25/233",
+      "title": "Empty Album",
+      "tracks": []
     }
   ]
 }
