@@ -86,6 +86,7 @@ const MusicPlayer = () => {
           onDuration={(e: any) => {
             setDuration(Math.round(e));
           }}
+          onEnded={() => selectNext()}
           onProgress={(e: any) => {
             setCurrentTime(Math.round(e.playedSeconds * 100) / 100);
           }}
