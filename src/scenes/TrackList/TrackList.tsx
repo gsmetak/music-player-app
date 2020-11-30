@@ -43,7 +43,7 @@ const TrackList = () => {
   return (
     <SContainer data-test="track-list">
       <SInfoContainer>
-        <SBackButton onClick={() => history.goBack()}>
+        <SBackButton onClick={() => history.push('/')}>
           <FontAwesomeIcon icon={faChevronLeft} />
           &nbsp;Back
         </SBackButton>
