@@ -125,6 +125,7 @@ const MusicPlayer = () => {
           }}
           onReady={() => {
             setIsSongLoading(false);
+            setIsPlaying(true);
             setHasError(false);
           }}
         />
