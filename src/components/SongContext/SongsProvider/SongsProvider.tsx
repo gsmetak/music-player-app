@@ -26,6 +26,8 @@ const SongsProvider = ({ children }: Props) => {
       return;
     }
 
+    setIsSongLoading(true);
+
     const { tracks } = data.albums.find(
       (album) => album.id === selectedTrack.album_id,
     )!;
@@ -41,6 +43,8 @@ const SongsProvider = ({ children }: Props) => {
     if (!selectedTrack) {
       return;
     }
+
+    setIsSongLoading(true);
 
     const { tracks } = data.albums.find(
       (album) => album.id === selectedTrack.album_id,
