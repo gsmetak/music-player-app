@@ -70,6 +70,7 @@ const MusicPlayer = () => {
       />
 
       <Controls
+        isDisabled={!selectedTrack}
         isPlaying={isPlaying}
         selectNext={selectNext}
         selectPrevious={selectPrevious}
