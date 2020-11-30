@@ -10,7 +10,7 @@ import Footer from '../Footer';
 import MusicPlayer from '../MusicPlayer';
 import SongsProvider from '../SongContext/SongsProvider';
 
-const SLayout = styled.div`
+const SMainContainer = styled.div`
   display: flex;
   height: 100%;
 `;
@@ -30,7 +30,7 @@ const SMain = styled.main`
 const Layout = () => (
   <SongsProvider>
     <Header />
-    <SLayout>
+    <SMainContainer>
       <SMain>
         <Switch>
           <Route exact component={NotFound} path="/not-found" />
@@ -40,7 +40,7 @@ const Layout = () => (
           <Redirect to="/not-found" />
         </Switch>
       </SMain>
-    </SLayout>
+    </SMainContainer>
     <Footer>
       <MusicPlayer />
     </Footer>
