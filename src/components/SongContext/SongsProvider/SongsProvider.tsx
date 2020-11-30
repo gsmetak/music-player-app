@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import SongContext from '../SongContext';
+import { Song } from '../types';
 
 import data from '../../../resources/albums.json';
-import { Song } from '../types';
 
 interface Props {
   children: React.ReactNode;
@@ -35,6 +35,7 @@ const SongsProvider = ({ children }: Props) => {
       (album) => album.id === selectedTrack.album_id,
     )!;
 
+    // If the current track is the first one of the album, select the last one.
     if (selectedTrack.id === 1) {
       selectTrack(selectedTrack.album_id, tracks.length);
     } else {
@@ -53,6 +54,7 @@ const SongsProvider = ({ children }: Props) => {
       (album) => album.id === selectedTrack.album_id,
     )!;
 
+    // If the current track is the last one of the album, select the first one.
     if (selectedTrack.id === tracks.length) {
       selectTrack(selectedTrack.album_id, 1);
     } else {
