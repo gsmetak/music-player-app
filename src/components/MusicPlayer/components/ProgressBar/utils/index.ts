@@ -4,7 +4,7 @@ const secondsToMinutesAndSeconds = (time: number) => {
   }
 
   const minutes = Math.floor(time / 60);
-  const seconds = Math.round(time - minutes * 60);
+  const seconds = Math.floor(time - minutes * 60);
 
   if (seconds < 10) {
     return `${minutes}:0${seconds}`;
