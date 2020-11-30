@@ -12,6 +12,7 @@ import { SH2, SInfoContainer, SList } from './styled';
 
 import data from '../../resources/albums.json';
 import SongContext from '../../components/SongContext';
+import EmptyList from '../../components/EmptyList';
 
 interface ParamTypes {
   id: string;
@@ -50,19 +51,22 @@ const TrackList = () => {
 
         <SH2>{selectedAlbum?.title}</SH2>
       </SInfoContainer>
-
-      <SList>
-        {selectedAlbum?.tracks.map((track) => (
-          <ListItem
-            key={uuidv4()}
-            artist={track.artist}
-            id={track.id}
-            imageUrl={track.cover}
-            selectTrack={handleSelectTrack}
-            title={track.title}
-          />
-        ))}
-      </SList>
+      {!selectedAlbum?.tracks.length ? (
+        <EmptyList type="tracks" />
+      ) : (
+        <SList>
+          {selectedAlbum?.tracks.map((track) => (
+            <ListItem
+              key={uuidv4()}
+              artist={track.artist}
+              id={track.id}
+              imageUrl={track.cover}
+              selectTrack={handleSelectTrack}
+              title={track.title}
+            />
+          ))}
+        </SList>
+      )}
     </SContainer>
   );
 };
