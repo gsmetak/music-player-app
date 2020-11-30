@@ -12,9 +12,12 @@ interface Props {
 const SongsProvider = ({ children }: Props) => {
   const [selectedTrack, setSelectedTrack] = useState<Song | undefined>();
   const [isSongLoading, setIsSongLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   const selectTrack = (albumId: string, trackId: number) => {
     setIsSongLoading(true);
+    setHasError(false);
+
     setSelectedTrack(
       () =>
         data.albums.find((album) => album.id === albumId)?.tracks[trackId - 1],
@@ -33,9 +36,9 @@ const SongsProvider = ({ children }: Props) => {
     )!;
 
     if (selectedTrack.id === 1) {
-      setSelectedTrack(tracks[tracks.length - 1]);
+      selectTrack(selectedTrack.album_id, tracks.length);
     } else {
-      setSelectedTrack((prevState) => prevState && tracks[prevState.id - 2]);
+      selectTrack(selectedTrack.album_id, selectedTrack.id - 1);
     }
   };
 
@@ -51,9 +54,9 @@ const SongsProvider = ({ children }: Props) => {
     )!;
 
     if (selectedTrack.id === tracks.length) {
-      setSelectedTrack(tracks[0]);
+      selectTrack(selectedTrack.album_id, 1);
     } else {
-      setSelectedTrack((prevState) => prevState && tracks[prevState.id]);
+      selectTrack(selectedTrack.album_id, selectedTrack.id + 1);
     }
   };
 
@@ -66,6 +69,8 @@ const SongsProvider = ({ children }: Props) => {
         selectNext,
         isSongLoading,
         setIsSongLoading,
+        hasError,
+        setHasError,
       }}
     >
       {children}

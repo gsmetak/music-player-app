@@ -60,12 +60,9 @@ const MusicPlayer = () => {
     selectPrevious,
     isSongLoading,
     setIsSongLoading,
+    hasError,
+    setHasError,
   } = useContext(SongContext)!;
-
-  const url = {
-    src: selectedTrack?.url,
-    type: 'audio/mp3',
-  };
 
   const seekTo = (time: number) => {
     if (player?.current) {
@@ -82,7 +79,12 @@ const MusicPlayer = () => {
   return (
     <SContainer data-test="music-player">
       <STitleContainer>
-        {selectedTrack && <H3>{selectedTrack.title}</H3>}
+        {selectedTrack &&
+          (hasError ? (
+            <H3>There was an error playing the selected track.</H3>
+          ) : (
+            <H3>{selectedTrack.title}</H3>
+          ))}
       </STitleContainer>
       <ProgressBar
         currentTime={currentTime}
@@ -91,7 +93,7 @@ const MusicPlayer = () => {
       />
 
       <Controls
-        isDisabled={!selectedTrack}
+        isDisabled={!selectedTrack || hasError}
         isLoading={isSongLoading}
         isPlaying={isPlaying}
         selectNext={selectNext}
@@ -102,17 +104,29 @@ const MusicPlayer = () => {
       {selectedTrack && (
         <SReactPlayer
           ref={player}
+          config={{
+            file: {
+              forceAudio: true,
+            },
+          }}
           playing={isPlaying}
           progressInterval={100}
-          url={[url]}
+          url={selectedTrack.url}
           onDuration={(e: any) => {
             setDuration(Math.round(e));
           }}
           onEnded={() => selectNext()}
+          onError={() => {
+            setHasError(true);
+            setIsSongLoading(false);
+          }}
           onProgress={(e: any) => {
             setCurrentTime(Math.round(e.playedSeconds * 100) / 100);
           }}
-          onReady={() => setIsSongLoading(false)}
+          onReady={() => {
+            setIsSongLoading(false);
+            setHasError(false);
+          }}
         />
       )}
     </SContainer>

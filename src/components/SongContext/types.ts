@@ -2,6 +2,8 @@ export type SongsInstance = {
   selectedTrack: any;
   isSongLoading: boolean;
   setIsSongLoading: (value: boolean) => void;
+  setHasError: (value: boolean) => void;
+  hasError: boolean;
   selectTrack: (albumId: string, trackId: number) => void;
   selectPrevious: () => void;
   selectNext: () => void;
