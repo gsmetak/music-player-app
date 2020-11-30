@@ -32,6 +32,10 @@ export const SButton = styled.button`
   padding: 10px;
   height: 40px;
 
+  &:disabled {
+    opacity: 0.5;
+  }
+
   &:focus {
     box-shadow: 0 0 0 3px #dcdcff;
   }
