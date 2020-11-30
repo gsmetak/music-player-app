@@ -9,7 +9,8 @@ import SongContext from '../SongContext';
 import { H3 } from '../styled';
 
 const SContainer = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: auto;
   text-align: center;
   width: 40vw;
@@ -17,10 +18,18 @@ const SContainer = styled.div`
   & > * {
     color: white;
   }
+
+  @media (max-width: 1024px) {
+    width: 60vw;
+  }
+
+  @media (max-width: 768px) {
+    width: 80vw;
+  }
 `;
 
 const SReactPlayer = styled(ReactPlayer)`
-  position: absolute;
+  display: none;
 `;
 
 const MusicPlayer = () => {

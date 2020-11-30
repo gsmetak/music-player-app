@@ -26,6 +26,14 @@ const SControls = styled.div`
   & > * {
     font-size: 2.5rem;
   }
+
+  @media (max-width: 1024px) {
+    width: 35%;
+  }
+
+  @media (max-width: 767px) {
+    width: 80%;
+  }
 `;
 
 const Controls = ({

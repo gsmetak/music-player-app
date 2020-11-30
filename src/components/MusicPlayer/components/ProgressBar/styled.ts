@@ -5,7 +5,7 @@ export const SBar = styled.div`
   border-radius: 5px;
   height: 10px;
   margin: auto 1em;
-  width: 90%;
+  width: 75%;
 `;
 
 export const SBarElapsed = styled.div.attrs((props: { width: string }) => ({
@@ -25,5 +25,5 @@ export const SContainer = styled.div`
 `;
 
 export const STime = styled.span`
-  width: 5%;
+  width: 12.5%;
 `;
