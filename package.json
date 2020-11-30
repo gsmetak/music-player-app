@@ -12,6 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
     "@types/uuid": "^8.3.0",
+    "emotion": "^11.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-error-boundary": "^3.0.2",
@@ -19,10 +20,12 @@
     "react-player": "^2.7.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "react-spinners": "^0.9.0",
     "styled-components": "^5.2.1",
     "uuid": "^8.3.1"
   },
   "devDependencies": {
+    "@emotion/eslint-plugin": "^11.0.0",
     "@testing-library/dom": "^7.26.6",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.1",
@@ -44,6 +47,7 @@
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-emotion": "^11.0.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.2",

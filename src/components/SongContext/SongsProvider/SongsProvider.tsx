@@ -11,8 +11,10 @@ interface Props {
 
 const SongsProvider = ({ children }: Props) => {
   const [selectedTrack, setSelectedTrack] = useState<Song | undefined>();
+  const [isSongLoading, setIsSongLoading] = useState(false);
 
   const selectTrack = (albumId: string, trackId: number) => {
+    setIsSongLoading(true);
     setSelectedTrack(
       () =>
         data.albums.find((album) => album.id === albumId)?.tracks[trackId - 1],
@@ -58,6 +60,8 @@ const SongsProvider = ({ children }: Props) => {
         selectTrack,
         selectPrevious,
         selectNext,
+        isSongLoading,
+        setIsSongLoading,
       }}
     >
       {children}

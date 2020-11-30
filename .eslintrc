@@ -11,7 +11,7 @@
     "jest": true
   },
   "extends": ["airbnb-typescript", "prettier", "prettier/react"],
-  "plugins": ["prettier", "typescript", "react-hooks"],
+  "plugins": ["prettier", "typescript", "react-hooks", "@emotion"],
   "settings": {
     "import/resolver": {
       "node": {

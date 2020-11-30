@@ -6,6 +6,7 @@ import {
   faStepBackward,
   faStepForward,
 } from '@fortawesome/free-solid-svg-icons';
+import ClipLoader from 'react-spinners/ClipLoader';
 import styled from 'styled-components';
 
 import { STransparentButton } from '../../../../scenes/styled';
@@ -13,6 +14,7 @@ import { STransparentButton } from '../../../../scenes/styled';
 interface Props {
   togglePlay: () => void;
   isPlaying: boolean;
+  isLoading: boolean;
   isDisabled: boolean;
   selectPrevious: () => void;
   selectNext: () => void;
@@ -40,6 +42,7 @@ const SControls = styled.div`
 const Controls = ({
   togglePlay,
   isDisabled,
+  isLoading,
   isPlaying,
   selectNext,
   selectPrevious,
@@ -49,9 +52,13 @@ const Controls = ({
       <FontAwesomeIcon icon={faStepBackward} />
     </STransparentButton>
 
-    <STransparentButton disabled={isDisabled} onClick={() => togglePlay()}>
-      <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
-    </STransparentButton>
+    {isLoading ? (
+      <ClipLoader color="#ffffff" loading={isLoading} />
+    ) : (
+      <STransparentButton disabled={isDisabled} onClick={() => togglePlay()}>
+        <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
+      </STransparentButton>
+    )}
 
     <STransparentButton disabled={isDisabled} onClick={() => selectNext()}>
       <FontAwesomeIcon icon={faStepForward} />

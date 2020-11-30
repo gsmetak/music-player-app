@@ -10,7 +10,7 @@ const SFooter = styled.footer`
   background-color: #8888d0;
   box-sizing: border-box;
   display: flex;
-  height: 100px;
+  height: 110px;
   justify-content: space-between;
   padding: 0 16px;
   position: sticky;

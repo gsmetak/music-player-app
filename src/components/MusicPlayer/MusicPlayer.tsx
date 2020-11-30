@@ -11,6 +11,7 @@ import { H3 } from '../styled';
 const SContainer = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
   margin: auto;
   text-align: center;
   width: 40vw;
@@ -32,6 +33,19 @@ const SReactPlayer = styled(ReactPlayer)`
   display: none;
 `;
 
+const STitleContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  height: 15%;
+
+  & > * {
+    margin: auto 0.5em;
+  }
+`;
+
 const MusicPlayer = () => {
   const player = useRef() as React.MutableRefObject<ReactPlayer>;
 
@@ -40,8 +54,13 @@ const MusicPlayer = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  // @ts-ignore
-  const { selectedTrack, selectNext, selectPrevious } = useContext(SongContext);
+  const {
+    selectedTrack,
+    selectNext,
+    selectPrevious,
+    isSongLoading,
+    setIsSongLoading,
+  } = useContext(SongContext)!;
 
   const url = {
     src: selectedTrack?.url,
@@ -62,7 +81,9 @@ const MusicPlayer = () => {
 
   return (
     <SContainer data-test="music-player">
-      <H3>{selectedTrack && selectedTrack.title}</H3>
+      <STitleContainer>
+        {selectedTrack && <H3>{selectedTrack.title}</H3>}
+      </STitleContainer>
       <ProgressBar
         currentTime={currentTime}
         duration={duration}
@@ -71,6 +92,7 @@ const MusicPlayer = () => {
 
       <Controls
         isDisabled={!selectedTrack}
+        isLoading={isSongLoading}
         isPlaying={isPlaying}
         selectNext={selectNext}
         selectPrevious={selectPrevious}
@@ -90,6 +112,7 @@ const MusicPlayer = () => {
           onProgress={(e: any) => {
             setCurrentTime(Math.round(e.playedSeconds * 100) / 100);
           }}
+          onReady={() => setIsSongLoading(false)}
         />
       )}
     </SContainer>
